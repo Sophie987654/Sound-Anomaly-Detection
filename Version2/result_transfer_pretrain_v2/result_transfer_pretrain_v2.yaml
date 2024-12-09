@@ -1,0 +1,32 @@
+fan_id_00_to_general_fan:
+  AUC: 0.6799999999999999
+fan_id_02_to_general_fan:
+  AUC: 0.72
+fan_id_04_to_general_fan:
+  AUC: 0.7200000000000001
+fan_id_06_to_general_fan:
+  AUC: 0.8400000000000001
+pump_id_00_to_general_pump:
+  AUC: 0.48000000000000004
+pump_id_02_to_general_pump:
+  AUC: 0.24
+pump_id_04_to_general_pump:
+  AUC: 0.76
+pump_id_06_to_general_pump:
+  AUC: 0.72
+slider_id_00_to_general_slider:
+  AUC: 0.64
+slider_id_02_to_general_slider:
+  AUC: 0.52
+slider_id_04_to_general_slider:
+  AUC: 0.5599999999999999
+slider_id_06_to_general_slider:
+  AUC: 0.7600000000000001
+valve_id_00_to_general_valve:
+  AUC: 0.44000000000000006
+valve_id_02_to_general_valve:
+  AUC: 0.19999999999999998
+valve_id_04_to_general_valve:
+  AUC: 0.4
+valve_id_06_to_general_valve:
+  AUC: 0.2
