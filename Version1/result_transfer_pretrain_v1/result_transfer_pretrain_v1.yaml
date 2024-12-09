@@ -1,0 +1,96 @@
+fan_id_00_to_pump:
+  AUC: 0.68
+fan_id_00_to_slider:
+  AUC: 0.76
+fan_id_00_to_valve:
+  AUC: 0.76
+fan_id_02_to_pump:
+  AUC: 0.8
+fan_id_02_to_slider:
+  AUC: 0.7600000000000001
+fan_id_02_to_valve:
+  AUC: 0.8
+fan_id_04_to_pump:
+  AUC: 0.68
+fan_id_04_to_slider:
+  AUC: 0.7200000000000001
+fan_id_04_to_valve:
+  AUC: 0.6800000000000002
+fan_id_06_to_pump:
+  AUC: 0.8400000000000001
+fan_id_06_to_slider:
+  AUC: 0.8400000000000001
+fan_id_06_to_valve:
+  AUC: 0.8
+pump_id_00_to_fan:
+  AUC: 0.6
+pump_id_00_to_slider:
+  AUC: 0.6
+pump_id_00_to_valve:
+  AUC: 0.48
+pump_id_02_to_fan:
+  AUC: 0.16000000000000003
+pump_id_02_to_slider:
+  AUC: 0.28
+pump_id_02_to_valve:
+  AUC: 0.16000000000000003
+pump_id_04_to_fan:
+  AUC: 0.8
+pump_id_04_to_slider:
+  AUC: 0.76
+pump_id_04_to_valve:
+  AUC: 0.92
+pump_id_06_to_fan:
+  AUC: 0.72
+pump_id_06_to_slider:
+  AUC: 0.8
+pump_id_06_to_valve:
+  AUC: 0.44
+slider_id_00_to_fan:
+  AUC: 0.64
+slider_id_00_to_pump:
+  AUC: 0.76
+slider_id_00_to_valve:
+  AUC: 0.6799999999999999
+slider_id_02_to_fan:
+  AUC: 0.48
+slider_id_02_to_pump:
+  AUC: 0.56
+slider_id_02_to_valve:
+  AUC: 0.56
+slider_id_04_to_fan:
+  AUC: 0.52
+slider_id_04_to_pump:
+  AUC: 0.44
+slider_id_04_to_valve:
+  AUC: 0.56
+slider_id_06_to_fan:
+  AUC: 0.72
+slider_id_06_to_pump:
+  AUC: 0.8
+slider_id_06_to_valve:
+  AUC: 0.72
+valve_id_00_to_fan:
+  AUC: 0.4
+valve_id_00_to_pump:
+  AUC: 0.4800000000000001
+valve_id_00_to_slider:
+  AUC: 0.4800000000000001
+valve_id_02_to_fan:
+  AUC: 0.19999999999999998
+valve_id_02_to_pump:
+  AUC: 0.15999999999999998
+valve_id_02_to_slider:
+  AUC: 0.19999999999999998
+valve_id_04_to_fan:
+  AUC: 0.36000000000000004
+valve_id_04_to_pump:
+  AUC: 0.52
+valve_id_04_to_slider:
+  AUC: 0.39999999999999997
+valve_id_06_to_fan:
+  AUC: 0.2
+valve_id_06_to_pump:
+  AUC: 0.31999999999999995
+valve_id_06_to_slider:
+  AUC: 0.16
