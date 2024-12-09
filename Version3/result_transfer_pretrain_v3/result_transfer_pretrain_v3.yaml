@@ -1,0 +1,96 @@
+fan_id_00_to_('slider', 'pump'):
+  AUC: 0.8
+fan_id_00_to_('valve', 'pump'):
+  AUC: 0.8
+fan_id_00_to_('valve', 'slider'):
+  AUC: 0.72
+fan_id_02_to_('slider', 'pump'):
+  AUC: 0.8
+fan_id_02_to_('valve', 'pump'):
+  AUC: 0.8
+fan_id_02_to_('valve', 'slider'):
+  AUC: 0.7200000000000001
+fan_id_04_to_('slider', 'pump'):
+  AUC: 0.6
+fan_id_04_to_('valve', 'pump'):
+  AUC: 0.68
+fan_id_04_to_('valve', 'slider'):
+  AUC: 0.6000000000000001
+fan_id_06_to_('slider', 'pump'):
+  AUC: 0.8
+fan_id_06_to_('valve', 'pump'):
+  AUC: 0.8400000000000001
+fan_id_06_to_('valve', 'slider'):
+  AUC: 0.8400000000000001
+pump_id_00_to_('fan', 'slider'):
+  AUC: 0.6799999999999999
+pump_id_00_to_('fan', 'valve'):
+  AUC: 0.68
+pump_id_00_to_('valve', 'slider'):
+  AUC: 0.6
+pump_id_02_to_('fan', 'slider'):
+  AUC: 0.16000000000000003
+pump_id_02_to_('fan', 'valve'):
+  AUC: 0.32000000000000006
+pump_id_02_to_('valve', 'slider'):
+  AUC: 0.16000000000000003
+pump_id_04_to_('fan', 'slider'):
+  AUC: 0.8
+pump_id_04_to_('fan', 'valve'):
+  AUC: 0.76
+pump_id_04_to_('valve', 'slider'):
+  AUC: 0.76
+pump_id_06_to_('fan', 'slider'):
+  AUC: 0.76
+pump_id_06_to_('fan', 'valve'):
+  AUC: 0.92
+pump_id_06_to_('valve', 'slider'):
+  AUC: 0.76
+slider_id_00_to_('fan', 'pump'):
+  AUC: 0.8
+slider_id_00_to_('fan', 'valve'):
+  AUC: 0.8400000000000001
+slider_id_00_to_('valve', 'pump'):
+  AUC: 0.72
+slider_id_02_to_('fan', 'pump'):
+  AUC: 0.52
+slider_id_02_to_('fan', 'valve'):
+  AUC: 0.56
+slider_id_02_to_('valve', 'pump'):
+  AUC: 0.48
+slider_id_04_to_('fan', 'pump'):
+  AUC: 0.48
+slider_id_04_to_('fan', 'valve'):
+  AUC: 0.4
+slider_id_04_to_('valve', 'pump'):
+  AUC: 0.52
+slider_id_06_to_('fan', 'pump'):
+  AUC: 0.8
+slider_id_06_to_('fan', 'valve'):
+  AUC: 0.8
+slider_id_06_to_('valve', 'pump'):
+  AUC: 0.8
+valve_id_00_to_('fan', 'pump'):
+  AUC: 0.44
+valve_id_00_to_('fan', 'slider'):
+  AUC: 0.4800000000000001
+valve_id_00_to_('slider', 'pump'):
+  AUC: 0.44000000000000006
+valve_id_02_to_('fan', 'pump'):
+  AUC: 0.19999999999999998
+valve_id_02_to_('fan', 'slider'):
+  AUC: 0.31999999999999995
+valve_id_02_to_('slider', 'pump'):
+  AUC: 0.15999999999999998
+valve_id_04_to_('fan', 'pump'):
+  AUC: 0.6000000000000001
+valve_id_04_to_('fan', 'slider'):
+  AUC: 0.6000000000000001
+valve_id_04_to_('slider', 'pump'):
+  AUC: 0.56
+valve_id_06_to_('fan', 'pump'):
+  AUC: 0.12
+valve_id_06_to_('fan', 'slider'):
+  AUC: 0.12
+valve_id_06_to_('slider', 'pump'):
+  AUC: 0.28
