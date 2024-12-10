@@ -90,3 +90,12 @@
   
   2) **transfer_pretrain_v3.ipynb** 실행  
      - 전이학습을 통해 16번의 결과를 도출하며, 결과는 'result_transfer_pretrain_v3' 폴더에 저장됩니다.
+    
+## 6. 수상 경력
+
+- 2023 데이터청년캠퍼스 프로젝트 경진대회 대상
+- 2023 데이터 청년인재 양성사업 프로젝트 평가 장려상
+
+## 7. 시연영상
+
+[프로젝트 시연 영상](https://youtu.be/ehZzpnuTtWg?si=Sb7IMBIFaQZq1XWu)
