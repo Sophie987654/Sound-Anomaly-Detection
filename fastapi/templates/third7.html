@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>기계 이상음 판별 - 내 모델로 예측</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Gasoek+One&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<style>
+        * {
+            font-family: sans-serif;
+        }
+
+        h2 {
+            font-family: 'Gasoek One', sans-serif;
+            font-size: 100px;
+            font-weight: 300;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h2>기계 이상음 판별</h2>
+<h3>내 모델로 예측</h3>
+
+<!-- Step 1: 모델 선택 -->
+<div>
+<h3>Step 1: 모델 선택</h3>
+<label for="modelName">사용할 모델 선택:</label>
+<select id="modelName" name="modelName"></select>
+</div>
+<br/><br/>
+
+<!-- Step 2: 예측 데이터 업로드 -->
+<h4>Step 2: 예측 데이터 업로드</h4>
+<label for="upload">Upload a WAV file:</label>
+<input accept=".wav" id="upload" name="audio" onchange="loadAudioFile(event)" required="" type="file"/><audio controls="True" id="audioPlayer" style="width: 100%; margin-top: 20px;"></audio><script>
+    function loadAudioFile(event) {
+        const audioPlayer = document.getElementById('audioPlayer');
+        const file = event.target.files[0];
+        const objectURL = URL.createObjectURL(file);
+        audioPlayer.src = objectURL;
+    }
+    </script>
+<br/><br/>
+
+
+<!-- 예측 버튼 -->
+<button id="predict">Predict</button>
+<br/><br/>
+
+
+<!-- Step 3: 예측 결과 확인 -->
+<h4>Step 3: 예측 결과 확인</h4>
+<div id="result"></div>
+<div id="errorPlot"></div>
+<script>
+        function visualizeError(errorData) {
+            const errorPlotDiv = document.getElementById("errorPlot");
+            errorPlotDiv.innerHTML = ""; // 이전 그래프를 지우기 위해 초기화
+
+            const data = [{
+                x: errorData.time_steps,
+                y: errorData.error,
+                type: 'scatter',
+                mode: 'lines',
+                line: { color: 'red' }
+            }];
+
+            const layout = {
+                xaxis: { title: '시간' },
+                yaxis: { title: '에러' },
+                title: '예측 결과 확인',
+                showlegend: false
+            };
+
+            Plotly.newPlot(errorPlotDiv, data, layout);
+        }
+        
+        document.getElementById("predict").addEventListener("click", function() {
+            const audioBlob = document.getElementById("upload").files[0];
+            const modelName = document.getElementById("modelName").value;
+            sendData(audioBlob, modelName, "/predict_custom/");
+        });
+
+        function sendData(audioBlob, modelName, endpoint) {
+            const formData = new FormData();
+            formData.append("audio", audioBlob);
+            formData.append("modelName", modelName);
+
+
+            fetch(endpoint, {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultElement = document.getElementById("result");
+                const resultMessage = data.result === "정상" ? "해당 기계는 현재 정상 입니다." : "해당 기계는 현재 비정상 입니다.";
+                resultElement.innerText = resultMessage;
+
+                visualizeError(data.errorData);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred.");
+            });
+        }
+    </script>
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('/custom_model_names')
+            .then(response => response.json())
+            .then(data => {
+                const modelSelect = document.getElementById('modelName');
+                data.modelNames.forEach(modelName => {
+                    const option = document.createElement('option');
+                    option.value = modelName;
+                    option.textContent = modelName;
+                    modelSelect.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기계 이상음 판별 - 내 데이터로 재학습</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        h2 {
+            font-family: 'Gasoek One', sans-serif;
+            font-size: 100px;
+            font-weight: 300;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>기계 이상음 판별</h2>
+    <h3>내 데이터로 재학습</h3>
+
+    <!-- Step 1: 모델 선택 -->
+    <h4>Step 1: 모델 선택</h4>
+    <label for="machineType">기계 종류 선택:</label>
+    <select id="machineType" name="machineType">
+        <option value="fan">Fan</option>
+        <option value="valve">Valve</option>
+        <option value="pump">Pump</option>
+        <option value="slider">Slider</option>
+    </select>
+    <br><br>
+
+    <!-- Step 2: 학습모델 이름 작성 -->
+    <div>
+        <h3>Step 2: 학습 모델 이름 작성</h3>
+        <label for="modelName">모델 이름:</label>
+        <input type="text" id="modelName" name="modelName" placeholder="모델 이름을 입력하세요." required>
+    </div>
+    
+
+    <!-- Step 3: 내 학습 데이터 업로드 -->
+    <h4>Step 3: 내 학습 데이터 업로드</h4>
+    <label for="upload">Upload a WAV file:</label>
+    <input type="file" id="upload" name="audio" accept=".wav" required>
+    <br><br>
+
+    <!-- 학습 버튼 -->
+    <button id="train">Train</button>
+    <br><br>
+
+    <!-- Step 4: 학습 결과 확인 -->
+    <h4>Step 4: 학습 결과 확인</h4>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("train").addEventListener("click", function() {
+            const audioBlob = document.getElementById("upload").files[0];
+            const machineType = document.getElementById("machineType").value;
+            const modelName = document.getElementById("modelName").value;
+            sendData(audioBlob, machineType, modelName, "/transfer");
+        });
+
+        function sendData(audioBlob, machineType, modelName, endpoint) {
+            const formData = new FormData();
+            formData.append("audio", audioBlob);
+            formData.append("machineType", machineType);
+            formData.append("modelName", modelName);
+
+            fetch(endpoint, {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                const resultElement = document.getElementById("result");
+                if(data.result){
+                    resultElement.innerText = "결과: " + data.result;
+                } else if(data.error) {
+                    resultElement.innerText = "오류: " + data.error;
+                } else {
+                    resultElement.innerText = "서버로부터 알 수 없는 응답이 반환되었습니다.";
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("An error occurred.");
+            });
+        }
+    </script>
+</body>
+
+</html>

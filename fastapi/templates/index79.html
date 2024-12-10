@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기계 이상음 판별</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+    
+        body {
+            text-align: center; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;  
+        }
+    
+        h2 {
+            font-family: 'Gasoek One', sans-serif;
+            font-size: 100px;
+            font-weight: 300;
+        }
+    
+        
+        .navbar {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: white;
+        }
+    
+        .nav-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+    
+        a {
+            font-size: 24px;
+            text-decoration: none;
+            margin: 20px;
+            display: block;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h2>기계 이상음 판별</h2>
+
+    <div class="navbar">
+        <a href="/pretrained_predict_page" class="nav-button">사전 모델로 예측</a>
+        <a href="/transfer_page" class="nav-button">내 데이터로 재학습</a>
+        <a href="/predict_page" class="nav-button">내 모델로 예측</a>
+    </div>
+</body>
+
+</html>
